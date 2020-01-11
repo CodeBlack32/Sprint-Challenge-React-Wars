@@ -1,28 +1,36 @@
 import React, { useState, useEffect } from "react";
+import SWCard from "./SWCard";
 import axios from "axios";
 
 
-const StarWarsList = () => {
-    const [data, setData] = useState({});
-    useEffect(() => {
-    axios
-        .get(`https://swapi.co/api/`)
-        .then(res => {
-        setData(res.data);
-        console.log(res);
-        })
-        .catch(error => {
-        console.log("The data was not returned", error);
-        });
-    }, []);
+export default function StarWarsList () {
+const [data, setData] = useState([]);
 
-    return (
-        <div className="card">
-            {console.log(data.people)}
-            <p> Hi, {data.people}</p>
-            
-        </div>
-    )
+useEffect(() => {
+axios
+    .get(`https://swapi.co/api/people/`)
+    .then(res => {
+    setData(res.data.results);
+    // const personInfo = data.results;
+    // console.log({personInfo})
+    })
+    .catch(error => {
+    console.log("The data was not returned", error);
+    });
+}, []);
+
+return (
+    <div className="card">  
+            {data.map(newData => {
+                return (
+                    <SWCard 
+                    key={newData.id}
+                    name={newData.name} 
+                    height={newData.height} 
+                    birth_year={newData.birth_year} 
+                    />
+                );
+            })}
+    </div>
+);
 }
-
-export default StarWarsList
