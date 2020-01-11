@@ -5,3 +5,9 @@ body {
   background-image: url('./sw-bg.jpg');
   background-size: cover;
 }
+
+.card {
+  width: 600px;
+  margin: 0 auto;
+  height: fit-content;
+}
