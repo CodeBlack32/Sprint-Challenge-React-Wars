@@ -6,8 +6,15 @@ body {
   background-size: cover;
 }
 
+.Header {
+      font-size: xx-large;
+}
+
+
 .card {
-  width: 600px;
+  background-color: lightgrey;
+  border: 1px solid green;
+  width: 800px;
   margin: 0 auto;
   height: fit-content;
 }

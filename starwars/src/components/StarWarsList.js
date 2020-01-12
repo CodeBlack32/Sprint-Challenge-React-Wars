@@ -11,8 +11,7 @@ axios
     .get(`https://swapi.co/api/people/`)
     .then(res => {
     setData(res.data.results);
-    // const personInfo = data.results;
-    // console.log({personInfo})
+    
     })
     .catch(error => {
     console.log("The data was not returned", error);

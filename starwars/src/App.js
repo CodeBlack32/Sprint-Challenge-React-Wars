@@ -1,5 +1,6 @@
 import React from 'react';
 import StarWarsList from './components/StarWarsList.js'
+import Footer from './components/Footer.js'
 import './App.css';
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
     <div className="App">
       <h1 className="Header">React Wars</h1>
       <StarWarsList />
+      <Footer />
     </div>
   );
 }
